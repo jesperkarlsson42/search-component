@@ -1,0 +1,70 @@
+[
+  {
+    "name": "JavaScript",
+    "id": 1
+  },
+  {
+    "name": "TypeScript",
+    "id": 2
+  },
+  {
+    "name": "Python",
+    "id": 3
+  },
+  {
+    "name": "C#",
+    "id": 4
+  },
+  {
+    "name": "C++",
+    "id": 5
+  },
+  {
+    "name": "C",
+    "id": 6
+  },
+  {
+    "name": "Java",
+    "id": 7
+  },
+  {
+    "name": "Ruby",
+    "id": 8
+  },
+  {
+    "name": "React",
+    "id": 9
+  },
+  {
+    "name": "Vue",
+    "id": 10
+  },
+  {
+    "name": "Angular",
+    "id": 11
+  },
+  {
+    "name": ".NET",
+    "id": 12
+  },
+  {
+    "name": "Css",
+    "id": 13
+  },
+  {
+    "name": "Scss",
+    "id": 14
+  },
+  {
+    "name": "Assembly",
+    "id": 15
+  },
+  {
+    "name": "Swift",
+    "id": 16
+  },
+  {
+    "name": "Flutter",
+    "id": 17
+  }
+]
