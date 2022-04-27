@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./searchInput.css";
 import { FaSearch } from "react-icons/fa";
 import { MdOutlineClear } from "react-icons/md";
@@ -18,20 +18,23 @@ function SearchInput({ data, placeholder }: IProps) {
   const [filteredData, setFilteredData] = useState<IData[]>([]);
   const [addedItems, setAddedItems] = useState<IData[]>([]);
 
-  useEffect(() => {
+  const handleFilter = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value);
+    handleFilterData(e.target.value);
+  };
+
+  const handleFilterData = (searchTerm: string) => {
     let newFilter = data.filter((value) => {
       return value.name.toLowerCase().includes(searchTerm.toLowerCase());
     });
 
     if (searchTerm === "") {
       setFilteredData([]);
-    } else {
+    } else if (filteredData !== newFilter) {
       setFilteredData(newFilter);
+    } else {
+      return;
     }
-  }, [searchTerm, data, filteredData]);
-
-  const handleFilter = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value);
   };
 
   const clearInput = () => {
@@ -41,15 +44,22 @@ function SearchInput({ data, placeholder }: IProps) {
   const addItem = (value: IData) => {
     setAddedItems([...addedItems, value]);
     setSearchTerm("");
+    handleFilterData("");
   };
 
   const removeItem = (value: IData) => {
-    let newArray: IData[] = addedItems;
+    let newArray: IData[] = [];
+
     for (let i = 0; i < addedItems.length; i++) {
+      newArray.push(addedItems[i]);
+    }
+
+    for (let i = 0; i < newArray.length; i++) {
       if (value.id === newArray[i].id) {
         newArray.splice(i, 1);
       }
     }
+
     setAddedItems(newArray);
   };
 
