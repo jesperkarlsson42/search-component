@@ -6,7 +6,7 @@ import Data from './Data/data.json';
 function App() {
   return (
     <div className="App">
-      <SearchInput data={Data} placeholder="Search..." />
+        <SearchInput data={Data} placeholder="Search..." />
     </div>
   );
 }

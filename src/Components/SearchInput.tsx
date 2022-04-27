@@ -39,6 +39,7 @@ function SearchInput({ data, placeholder }: IProps) {
 
   const clearInput = () => {
     setSearchTerm("");
+    setFilteredData([]);
   };
 
   const addItem = (value: IData) => {
