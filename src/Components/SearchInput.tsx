@@ -28,6 +28,14 @@ function SearchInput({ data, placeholder }: IProps) {
       return value.name.toLowerCase().includes(searchTerm.toLowerCase());
     });
 
+    for (let i = 0; i < addedItems.length; i++) {
+        for (let j = 0; j < newFilter.length; j++) {
+          if(addedItems[i].id === newFilter[j].id) {
+            newFilter.splice(j, 1);
+          }
+        }
+    }
+
     if (searchTerm === "") {
       setFilteredData([]);
     } else if (filteredData !== newFilter) {
